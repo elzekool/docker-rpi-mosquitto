@@ -1,0 +1,13 @@
+version: '2'
+services:
+    mosquitto:
+        build: build
+        image: elzekool/rpi-mosquitto
+        ports:
+            - "1883:1883"
+            - "9001:9001"
+        volumes:
+            - "${PWD}/data:/mqtt/data"
+            - "${PWD}/logs:/mqtt/logs"
+
+
